@@ -1,0 +1,624 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Objects/Challenge.tscn" type="PackedScene" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=3]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Control
+
+
+func exit():
+	yield(get_tree().create_timer(3), \"timeout\")
+	get_tree().quit()
+"
+
+[sub_resource type="Animation" id=2]
+resource_name = "loop"
+length = 5.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Enfeite/Loop/icon:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2.5, 3.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 91.1036, 44.8743 ), Vector2( 280.092, -122.695 ), Vector2( 516.957, -145.374 ), Vector2( 668.147, -47.1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Enfeite/Loop/icon:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1, 2.5, 3.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ -22.1241, 12.0501, -19.1335, 59.103 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Enfeite/Loop/icon:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1, 2.5, 3.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.46306, 1.46306 ), Vector2( 1.71258, 1.71258 ), Vector2( 0.964296, 0.964296 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Enfeite/Loop/icon:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1, 2.5, 3.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Enfeite/Loop/icon2:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 1, 2, 4, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 586.253, 191.025 ), Vector2( 586.253, 191.025 ), Vector2( 787.84, -18.1218 ), Vector2( 689.566, -125.215 ), Vector2( 719.073, -375.637 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Enfeite/Loop/icon2:rotation_degrees")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 1, 2, 4, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 126.389, 126.389, 89.9624, 509.987, 720.0 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Enfeite/Loop/icon2:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 1, 2, 4, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 0.772511, 0.772511 ), Vector2( 1.90414, 1.90414 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Enfeite/Loop/icon2:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 1, 2, 4, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Enfeite/Loop/icon3:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 3.3, 3.63498, 3.9, 4.2, 4.5, 4.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1117.37, 167.756 ), Vector2( 745.786, 281.628 ), Vector2( 612.217, 82.373 ), Vector2( 426.621, 512.146 ), Vector2( 233.899, 146.346 ), Vector2( 1.97638, 243.813 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Enfeite/Loop/icon3:rotation_degrees")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 3.3, 4.4, 4.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1200.0, 848.87 ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Enfeite/Loop/icon3:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 3.3, 3.63498, 4.4, 4.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Enfeite/creepy:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 518.217, 184.725 ), Vector2( 518.217, 97.7909 ), Vector2( 518.217, 97.7909 ), Vector2( 518.217, 184.725 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Enfeite/creepy:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 2.02537, 2.02537 ), Vector2( 5.82739, 1.6203 ), Vector2( 5.82739, 1.6203 ), Vector2( 2.02537, 2.02537 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Enfeite/creepy:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 0, 0, 1 ), Color( 1, 0, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+length = 0.5
+loop = true
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Enfeite/Confetti/icon10:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 795.541, -0.25, 0, 0.25, 0, 655.534, -0.25, 0, 0.25, 0, 608.34, -0.25, 0, 0.25, 0, 655.534, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 2.3, 9.5 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Enfeite/Confetti/icon10:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 198.868, -0.25, 0, 0.25, 0, -342.776, -0.25, 0, 0.25, 0, -208.475, -0.25, 0, 0.25, 0, 354.431, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 2.3, 9.5 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("Enfeite/Confetti/icon10:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 500, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("Enfeite/Confetti/icon9:position:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 751.7, -0.25, 0, 0.25, 0, 837.967, -0.25, 0, 0.25, 0, 790.774, -0.25, 0, 0.25, 0, 837.967, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 2.3, 9.5 )
+}
+tracks/4/type = "bezier"
+tracks/4/path = NodePath("Enfeite/Confetti/icon9:position:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"points": PoolRealArray( 198.868, -0.25, 0, 0.25, 0, -335.705, -0.25, 0, 0.25, 0, -201.404, -0.25, 0, 0.25, 0, 361.502, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 2.3, 9.5 )
+}
+tracks/5/type = "bezier"
+tracks/5/path = NodePath("Enfeite/Confetti/icon9:rotation_degrees")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 500, -0.25, 0, 0.25, 0, 500, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.4, 0.6 )
+}
+tracks/6/type = "bezier"
+tracks/6/path = NodePath("Enfeite/Confetti/icon:position:x")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"points": PoolRealArray( 207.228, -0.25, 0, 0.25, 0, 354.306, -0.25, 0, 0.25, 0, 354.306, -0.25, 0, 0.25, 0, 307.113, -0.25, 0, 0.25, 0, 354.306, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.4, 0.6, 2.3, 9.5 )
+}
+tracks/7/type = "bezier"
+tracks/7/path = NodePath("Enfeite/Confetti/icon:position:y")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"points": PoolRealArray( 163.512, -0.25, 0, 0.25, 0, -342.776, -0.25, 0, 0.25, 0, -342.776, -0.25, 0, 0.25, 0, -214.891, -0.25, 0, 0.25, 0, 354.431, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.4, 0.6, 2.3, 9.5 )
+}
+tracks/8/type = "bezier"
+tracks/8/path = NodePath("Enfeite/Confetti/icon:rotation_degrees")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 500, -0.25, 0, 0.25, 0, 500, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.4, 0.6 )
+}
+tracks/9/type = "bezier"
+tracks/9/path = NodePath("Enfeite/Confetti/icon5:position:x")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"points": PoolRealArray( 268.039, -0.25, 0, 0.25, 0, 82.7773, -0.25, 0, 0.25, 0, 82.7773, -0.25, 0, 0.25, 0, 35.5836, -0.25, 0, 0.25, 0, 82.7774, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.4, 0.6, 2.3, 9.5 )
+}
+tracks/10/type = "bezier"
+tracks/10/path = NodePath("Enfeite/Confetti/icon5:position:y")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"points": PoolRealArray( 198.868, -0.25, 0, 0.25, 0, -327.22, -0.25, 0, 0.25, 0, -327.22, -0.25, 0, 0.25, 0, -199.334, -0.25, 0, 0.25, 0, 369.988, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.4, 0.6, 2.3, 9.5 )
+}
+tracks/11/type = "bezier"
+tracks/11/path = NodePath("Enfeite/Confetti/icon5:rotation_degrees")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 500, -0.25, 0, 0.25, 0, 500, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.4, 0.6 )
+}
+tracks/12/type = "bezier"
+tracks/12/path = NodePath("Enfeite/Confetti/icon7:position:x")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"points": PoolRealArray( 774.328, -0.25, 0, 0.25, 0, 1057.17, -0.25, 0, 0.25, 0, 1057.17, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.4, 0.6 )
+}
+tracks/13/type = "bezier"
+tracks/13/path = NodePath("Enfeite/Confetti/icon7:position:y")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"points": PoolRealArray( 163.512, -0.25, 0, 0.25, 0, -41.5486, -0.25, 0, 0.25, 0, -41.5486, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.4, 0.6 )
+}
+tracks/14/type = "bezier"
+tracks/14/path = NodePath("Enfeite/Confetti/icon7:rotation_degrees")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 500, -0.25, 0, 0.25, 0, 500, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.4, 0.6 )
+}
+tracks/15/type = "bezier"
+tracks/15/path = NodePath("Enfeite/Confetti/icon8:position:x")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"points": PoolRealArray( 813.926, -0.25, 0, 0.25, 0, 529.669, -0.25, 0, 0.25, 0, 529.669, -0.25, 0, 0.25, 0, 482.475, -0.25, 0, 0.25, 0, 529.669, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.4, 0.6, 2.3, 9.5 )
+}
+tracks/16/type = "bezier"
+tracks/16/path = NodePath("Enfeite/Confetti/icon8:position:y")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"points": PoolRealArray( 163.512, -0.25, 0, 0.25, 0, -334.291, -0.25, 0, 0.25, 0, -334.291, -0.25, 0, 0.25, 0, -206.405, -0.25, 0, 0.25, 0, 362.917, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.4, 0.6, 2.3, 9.5 )
+}
+tracks/17/type = "bezier"
+tracks/17/path = NodePath("Enfeite/Confetti/icon8:rotation_degrees")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 500, -0.25, 0, 0.25, 0, 500, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.4, 0.6 )
+}
+tracks/18/type = "bezier"
+tracks/18/path = NodePath("Enfeite/Confetti/icon3:position:x")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"points": PoolRealArray( 286.424, -0.25, 0, 0.25, 0, -13.3892, -0.25, 0, 0.25, 0, -13.3892, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.4, 0.6 )
+}
+tracks/19/type = "bezier"
+tracks/19/path = NodePath("Enfeite/Confetti/icon3:position:y")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/keys = {
+"points": PoolRealArray( 163.512, -0.25, 0, 0.25, 0, -233.882, -0.25, 0, 0.25, 0, -233.882, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.4, 0.6 )
+}
+tracks/20/type = "bezier"
+tracks/20/path = NodePath("Enfeite/Confetti/icon3:rotation_degrees")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 500, -0.25, 0, 0.25, 0, 500, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.4, 0.6 )
+}
+tracks/21/type = "bezier"
+tracks/21/path = NodePath("Enfeite/Confetti/icon2:position:x")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/keys = {
+"points": PoolRealArray( 246.826, -0.25, 0, 0.25, 0, -60.0582, -0.25, 0, 0.25, 0, -60.0582, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.4, 0.6 )
+}
+tracks/22/type = "bezier"
+tracks/22/path = NodePath("Enfeite/Confetti/icon2:position:y")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/keys = {
+"points": PoolRealArray( 163.512, -0.25, 0, 0.25, 0, -75.4897, -0.25, 0, 0.25, 0, -75.4897, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.4, 0.6 )
+}
+tracks/23/type = "bezier"
+tracks/23/path = NodePath("Enfeite/Confetti/icon2:rotation_degrees")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 500, -0.25, 0, 0.25, 0, 500, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.4, 0.6 )
+}
+tracks/24/type = "bezier"
+tracks/24/path = NodePath("Enfeite/Confetti/icon6:position:x")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/keys = {
+"points": PoolRealArray( 734.73, -0.25, 0, 0.25, 0, 1071.31, -0.25, 0, 0.25, 0, 1071.31, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.4, 0.6 )
+}
+tracks/25/type = "bezier"
+tracks/25/path = NodePath("Enfeite/Confetti/icon6:position:y")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/keys = {
+"points": PoolRealArray( 163.512, -0.25, 0, 0.25, 0, -221.154, -0.25, 0, 0.25, 0, -221.154, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.4, 0.6 )
+}
+tracks/26/type = "bezier"
+tracks/26/path = NodePath("Enfeite/Confetti/icon6:rotation_degrees")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 500, -0.25, 0, 0.25, 0, 500, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.4, 0.6 )
+}
+tracks/27/type = "bezier"
+tracks/27/path = NodePath("Enfeite/Confetti/icon4:position:x")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/keys = {
+"points": PoolRealArray( 224.199, -0.25, 0, 0.25, 0, 225.613, -0.25, 0, 0.25, 0, 225.613, -0.25, 0, 0.25, 0, 178.419, -0.25, 0, 0.25, 0, 225.613, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.4, 0.6, 2.3, 9.5 )
+}
+tracks/28/type = "bezier"
+tracks/28/path = NodePath("Enfeite/Confetti/icon4:position:y")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/keys = {
+"points": PoolRealArray( 198.868, -0.25, 0, 0.25, 0, -341.362, -0.25, 0, 0.25, 0, -341.362, -0.25, 0, 0.25, 0, -213.476, -0.25, 0, 0.25, 0, 355.845, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.4, 0.6, 2.3, 9.5 )
+}
+tracks/29/type = "bezier"
+tracks/29/path = NodePath("Enfeite/Confetti/icon4:rotation_degrees")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 500, -0.25, 0, 0.25, 0, 500, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.4, 0.6 )
+}
+
+[node name="Test1" type="Control"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 140.0
+margin_top = 80.0
+margin_right = -140.0
+margin_bottom = -50.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Challenge" parent="PanelContainer" instance=ExtResource( 1 )]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 737.0
+margin_bottom = 163.0
+text = "E essa build no Godot aí? *wink*"
+text = "E essa build no Godot aí? *wink*"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "loop"
+anims/loop = SubResource( 2 )
+anims/mistake = SubResource( 3 )
+anims/win = SubResource( 4 )
+next/mistake = "loop"
+
+[node name="Enfeite" type="Node2D" parent="."]
+z_index = -1
+
+[node name="Loop" type="Node2D" parent="Enfeite"]
+position = Vector2( 124.726, -226.288 )
+
+[node name="icon" type="Sprite" parent="Enfeite/Loop"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 91.1036, 44.8743 )
+rotation = -0.386138
+texture = ExtResource( 3 )
+
+[node name="icon2" type="Sprite" parent="Enfeite/Loop"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 586.253, 191.025 )
+rotation = 2.2059
+texture = ExtResource( 3 )
+
+[node name="icon3" type="Sprite" parent="Enfeite/Loop"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 65.7129, 239.467 )
+rotation = 13.969
+texture = ExtResource( 3 )
+
+[node name="creepy" type="Sprite" parent="Enfeite"]
+modulate = Color( 1, 0, 0, 1 )
+position = Vector2( 518.217, 184.725 )
+scale = Vector2( 2.02537, 2.02537 )
+texture = ExtResource( 3 )
+
+[node name="Confetti" type="Node2D" parent="Enfeite"]
+
+[node name="icon" type="Sprite" parent="Enfeite/Confetti"]
+modulate = Color( 1, 0, 0, 1 )
+position = Vector2( 207.228, 163.512 )
+scale = Vector2( 0.489622, 0.489622 )
+texture = ExtResource( 3 )
+
+[node name="icon2" type="Sprite" parent="Enfeite/Confetti"]
+modulate = Color( 1, 0.470588, 0, 1 )
+position = Vector2( 246.826, 163.512 )
+scale = Vector2( 0.489622, 0.489622 )
+texture = ExtResource( 3 )
+
+[node name="icon3" type="Sprite" parent="Enfeite/Confetti"]
+modulate = Color( 0.87451, 1, 0, 1 )
+position = Vector2( 286.424, 163.512 )
+scale = Vector2( 0.489622, 0.489622 )
+texture = ExtResource( 3 )
+
+[node name="icon4" type="Sprite" parent="Enfeite/Confetti"]
+modulate = Color( 0, 1, 0.882812, 1 )
+position = Vector2( 224.199, 198.868 )
+scale = Vector2( 0.489622, 0.489622 )
+texture = ExtResource( 3 )
+
+[node name="icon5" type="Sprite" parent="Enfeite/Confetti"]
+modulate = Color( 1, 0, 0.843137, 1 )
+position = Vector2( 268.039, 198.868 )
+scale = Vector2( 0.489622, 0.489622 )
+texture = ExtResource( 3 )
+
+[node name="icon6" type="Sprite" parent="Enfeite/Confetti"]
+modulate = Color( 1, 0, 0, 1 )
+position = Vector2( 734.73, 163.512 )
+scale = Vector2( 0.489622, 0.489622 )
+texture = ExtResource( 3 )
+
+[node name="icon7" type="Sprite" parent="Enfeite/Confetti"]
+modulate = Color( 1, 0.470588, 0, 1 )
+position = Vector2( 774.328, 163.512 )
+scale = Vector2( 0.489622, 0.489622 )
+texture = ExtResource( 3 )
+
+[node name="icon8" type="Sprite" parent="Enfeite/Confetti"]
+modulate = Color( 0.87451, 1, 0, 1 )
+position = Vector2( 813.926, 163.512 )
+scale = Vector2( 0.489622, 0.489622 )
+texture = ExtResource( 3 )
+
+[node name="icon9" type="Sprite" parent="Enfeite/Confetti"]
+modulate = Color( 0, 1, 0.882812, 1 )
+position = Vector2( 751.7, 198.868 )
+scale = Vector2( 0.489622, 0.489622 )
+texture = ExtResource( 3 )
+
+[node name="icon10" type="Sprite" parent="Enfeite/Confetti"]
+modulate = Color( 1, 0, 0.843137, 1 )
+position = Vector2( 795.541, 198.868 )
+scale = Vector2( 0.489622, 0.489622 )
+texture = ExtResource( 3 )
+
+[connection signal="completed" from="PanelContainer/Challenge" to="." method="exit"]
+[connection signal="completed" from="PanelContainer/Challenge" to="AnimationPlayer" method="play" flags=3 binds= [ "win" ]]
+[connection signal="mistook" from="PanelContainer/Challenge" to="AnimationPlayer" method="play" binds= [ "mistake" ]]

@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Objects/Challenge.gd" type="Script" id=1]
+[ext_resource path="res://Tools/UpdateText.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Retro Gaming.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 22
+font_data = ExtResource( 3 )
+
+[node name="Hidden" type="RichTextLabel"]
+margin_right = 1010.0
+margin_bottom = 586.0
+custom_fonts/normal_font = SubResource( 1 )
+scroll_active = false
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Hint" type="RichTextLabel" parent="."]
+modulate = Color( 1, 1, 1, 0.282353 )
+show_behind_parent = true
+margin_right = 710.0
+margin_bottom = 156.0
+custom_fonts/normal_font = SubResource( 1 )
+text = "This is an example text"
+scroll_active = false
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
